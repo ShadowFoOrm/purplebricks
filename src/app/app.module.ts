@@ -3,6 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { app_routing } from './app.routing';
+
+// Helpers
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+// App Components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
@@ -17,7 +22,10 @@ import { ContactComponent } from './contact/contact.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    app_routing
+    app_routing,
+
+    // Helpers
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
