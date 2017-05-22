@@ -1,5 +1,6 @@
-@import './vars';
-@import './mixins';
+@import 'vars';
+@import 'mixins';
+@import 'fonts';
 
 // *** Reset styles
 section,
@@ -30,6 +31,13 @@ h5,
 h6 {
   margin: 0;
 }
+
+button,
+input {
+  &:focus {
+    outline: none;
+  }
+}
 // Reset styles ***
 
 // *** Bootstrap changes
@@ -40,6 +48,41 @@ h6 {
   &::after {
     display: none;
   }
+}
+
+.btn,
+.btn-large,
+.btn-small {
+  color: $white;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  &.purple {
+    background-color: lighten($purple, 15%);
+  }
+
+  &.blue {
+    background-color: $blue;
+  }
+}
+
+.btn {
+  padding: 0 10px;
+  border-radius: 5px;
+  background-color: lighten($gray, 40%);
+  font-size: 17px;
+  line-height: 28px;
+}
+
+.btn-small {
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.btn-large {
+  padding: 0 15px;
+  font-size: 22px;
+  line-height: 36px;
 }
 // Bootstrap changes ***
 
@@ -72,3 +115,23 @@ h6 {
   background-position: 0 4px;
 }
 // Sprites ***
+
+// *** Default styles & classes
+body {
+  font-family: Arial, Helvetica Neue, Helvetica,sans-serif;
+}
+
+label {
+  font-weight: normal;
+}
+
+.img-wrapper {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.text-right {
+  text-align: right;
+}
+// Default styles ***

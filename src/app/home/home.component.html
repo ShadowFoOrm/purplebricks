@@ -1,20 +1,20 @@
 <section>
   <div class="container status">
-    <b>Status:</b> Withdrawn
+    <strong>Status:</strong> Withdrawn
   </div>
 </section>
 <section>
   <div class="container property">
     <h3 class="card-title">The property</h3>
     <div fxLayout fxLayoutAlign="space-between">
-      <div>
+      <div fxLayout>
         <div class="img-wrapper"></div>
         <h1>Eddington House, 16 Wigginton Road,<br>Tamworth, B79 8PB</h1>
       </div>
-      <div>
+      <div class="text-right">
         <div>Asking price:</div>
-        <div>£189,950</div>
-        <button>VIEW EXTRAS INCLUDED</button>
+        <div class="price">£189,950</div>
+        <button class="btn btn-small">VIEW EXTRAS INCLUDED</button>
       </div>
     </div>
   </div>
@@ -23,7 +23,7 @@
   <div class="container buyer-details">
     <div class="card-title" fxLayout fxLayoutAlign="space-between">
       <h3>Buyer’s details</h3>
-      <button>Hide</button>
+      <button fxLayout fxLayoutAlign="space-between center"><span>Hide</span> <span>&#8249;</span></button>
     </div>
     <table>
       <tr>
@@ -49,19 +49,19 @@
   <div class="container buyer-extra-details">
     <div class="extra-left">
       <h3 class="card-title">Buyer’s offer</h3>
-      <div>£179,000</div>
+      <div class="price">£179,000</div>
       <label>Subject to offer qualification by Purplebricks</label>
       <div fxLayout fxLayoutAlign="space-between center">
-        <button>View Comments</button>
-        <div><span>Date: 24/10/2013</span><span>Time: 20.17</span></div>
+        <button class="btn">View Comments</button>
+        <div class="date"><span>Date: 24/10/2013</span><span>Time: 20.17</span></div>
       </div>
     </div>
     <div class="extra-right">
       <h3 class="card-title">Your response</h3>
       <div>You have withdrawn your acceptance of the offer</div>
       <div fxLayout fxLayoutAlign="space-between center">
-        <button>VIEW COMMENTS</button>
-        <div><span>Date: 24/10/2013</span><span>Time: 21.05</span></div>
+        <button class="btn">VIEW COMMENTS</button>
+        <div class="date"><span>Date: 24/10/2013</span><span>Time: 21.05</span></div>
       </div>
     </div>
   </div>
@@ -71,13 +71,13 @@
     <h3 class="card-title">Re-open negotiations</h3>
     <div class="auto-negotiation" fxLayout fxLayoutAlign="space-between center">
       Would you like your Expert, Robert White, to negotiate on your behalf? It’s completely free!
-      <button>NEGOTIATE FOR ME</button>
+      <button class="btn purple">NEGOTIATE FOR ME</button>
     </div>
-    <label for="">Enter an offer you would be willing to accept:</label>
+    <label for="new-price">Enter an offer you would be willing to accept:</label>
     <div fxLayout fxLayoutAlign="space-between center">
-      <div>&#8356;<input type="text"></div>
-      <button>SUBMIT OFFER</button>
+      <div fxLayout fxLayoutAlign="start center"><span class="symbol">&#163;</span><input type="number" id="new-price"></div>
+      <button class="btn btn-large blue">SUBMIT OFFER</button>
     </div>
-    <button>ADD COMMENTS</button>
+    <button class="btn purple">ADD COMMENTS</button>
   </div>
 </section>

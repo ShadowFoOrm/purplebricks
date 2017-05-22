@@ -12,3 +12,8 @@
   padding: 30px 40px;
   border: 1px solid $border-color;
 }
+
+@mixin font-w($font-family, $font-weight) {
+  font-family: $font-family;
+  font-weight: $font-weight;
+}
