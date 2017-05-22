@@ -1,0 +1,57 @@
+@import './../styles/vars';
+@import './../styles/mixins';
+
+header {
+  height: 100px;
+  background-color: lighten($gray, 70%);
+  color: $purple;
+  box-shadow: 0 1px 10px 0px $gray;
+
+  h1 {
+    margin: 0;
+  }
+
+  a {
+    color: $purple;
+  }
+}
+
+footer {
+  height: 40px;
+  background-color: lighten($gray, 6.5%);
+
+  li {
+    margin-right: 18px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.main-menu {
+  li {
+    color: $white;
+  }
+
+  li::after {
+    content: '|';
+    margin-left: 18px;
+  }
+
+  li:last-child::after {
+    display: none;
+  }
+
+  a,
+  button {
+    color: $white;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  button {
+    background-color: transparent;
+    border: 0;
+  }
+}

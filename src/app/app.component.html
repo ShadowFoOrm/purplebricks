@@ -1,12 +1,32 @@
-<header>
-  <ul>
-    <li><a [routerLink]="['/']">Home</a></li>
-    <li><a [routerLink]="['/contact']">Contact</a></li>
-  </ul>
+<header fxLayout="column" fxLayoutAlign="center center">
+  <div class="container" fxLayout="row" fxLayoutAlign="space-between end">
+    <a [routerLink]="['/']">
+      <h1>
+        <label>welcome to the</label><br>
+        eZie<sup>&reg;</sup><span>system</span>
+      </h1>
+    </a>
+    <h2>Secure negotiation centre</h2>
+  </div>
 </header>
 
 <router-outlet></router-outlet>
 
-<footer>
-  footer
+<footer fxLayout fxLayoutAlign="center">
+  <nav class="container" fxLayout fxLayoutAlign="space-between center">
+    <ul class="main-menu" fxLayout fxLayoutAlign="center">
+      <li><a [routerLink]="['/contact']">Contact Us</a></li>
+      <li><a [routerLink]="['/faq']">FAQ</a></li>
+      <li><a [routerLink]="['/join']">Join the team</a></li>
+      <li><a [routerLink]="['/about']">about us</a></li>
+      <li><button>Live help</button></li>
+    </ul>
+    <ul class="social" fxLayout fxLayoutAlign="center">
+      <li><a class="sprites-social twitter" href="https://twitter.com/"></a></li>
+      <li><a class="sprites-social facebook" href="https://www.facebook.com/"></a></li>
+      <li><a class="sprites-social youtube" href="https://www.youtube.com/"></a></li>
+      <li><a class="sprites-social pinterest" href="https://www.pinterest.com/"></a></li>
+      <li><a class="sprites-social google" href="https://plus.google.com/"></a></li>
+    </ul>
+  </nav>
 </footer>
