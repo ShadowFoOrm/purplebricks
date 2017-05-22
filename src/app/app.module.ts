@@ -6,6 +6,7 @@ import { app_routing } from './app.routing';
 
 // Helpers
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // App Components
 import { AppComponent } from './app.component';
@@ -25,7 +26,8 @@ import { ContactComponent } from './contact/contact.component';
     app_routing,
 
     // Helpers
-    FlexLayoutModule
+    FlexLayoutModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

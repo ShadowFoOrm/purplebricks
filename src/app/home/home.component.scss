@@ -56,6 +56,10 @@ section {
       transition: transform .3s ease-in-out;
       transform: rotate(90deg);
     }
+
+    span.opened {
+      transform: rotate(-90deg);
+    }
   }
 }
 
@@ -165,6 +169,10 @@ section {
   font-size: 17px;
   color: $purple;
 
+  .card-title {
+    margin: 0;
+  }
+
   td {
     margin: 5px 0;
   }
@@ -172,6 +180,14 @@ section {
   td:last-child {
     padding-left: 10px;
     color: $gray;
+  }
+}
+
+.details-content {
+  overflow: hidden;
+
+  table {
+    margin-top: 30px;
   }
 }
 

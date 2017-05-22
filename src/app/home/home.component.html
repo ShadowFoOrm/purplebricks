@@ -23,26 +23,29 @@
   <div class="container buyer-details">
     <div class="card-title" fxLayout fxLayoutAlign="space-between">
       <h3>Buyer’s details</h3>
-      <button fxLayout fxLayoutAlign="space-between center"><span>Hide</span> <span>&#8249;</span></button>
+      <button fxLayout fxLayoutAlign="space-between center" (click)="toggle()"><span>{{ buyerState == 'opened' ? 'Hide' : 'Show' }}</span> <span [class.opened]="buyerState == 'opened'">&#8249;</span></button>
     </div>
-    <table>
-      <tr>
-        <td>Name:</td>
-        <td>Mr David Shepherd</td>
-      </tr>
-      <tr>
-        <td>Buying position:</td>
-        <td>Property to sell - 20 weeks on the market</td>
-      </tr>
-      <tr>
-        <td>Financial position:</td>
-        <td>Mortgage required - approved</td>
-      </tr>
-      <tr>
-        <td>Timescale:</td>
-        <td>Would like to move in 10 weeks - no chain</td>
-      </tr>
-    </table>
+    <div class="details-content" [@buyerDetails]="buyerState">
+     <table>
+        <tr>
+          <td>Name:</td>
+          <td>Mr David Shepherd</td>
+        </tr>
+        <tr>
+          <td>Buying position:</td>
+          <td>Property to sell - 20 weeks on the market</td>
+        </tr>
+        <tr>
+          <td>Financial position:</td>
+          <td>Mortgage required - approved</td>
+        </tr>
+        <tr>
+          <td>Timescale:</td>
+          <td>Would like to move in 10 weeks - no chain</td>
+        </tr>
+      </table>
+    </div>
+
   </div>
 </section>
 <section>
