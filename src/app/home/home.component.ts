@@ -40,13 +40,8 @@ export class HomeComponent implements OnInit {
   }
 
   newOffer(): void {
-    var offersDetails = new Object();
-    offersDetails = this.newOfferValue;
+    const offer = this.newOfferValue.toFixed(0);
 
-    console.log(offersDetails);
-  }
-
-  validateNumber(): void {
-    this.newOfferValue;
+    console.log(offer);
   }
 }

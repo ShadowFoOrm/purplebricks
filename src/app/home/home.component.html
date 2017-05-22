@@ -13,7 +13,7 @@
       </div>
       <div class="porperty-price">
         <div>Asking price:</div>
-        <div class="price">£189,950</div>
+        <div class="price">£{{ 189950 | number:'.0-0'}}</div>
         <button class="btn btn-small">VIEW EXTRAS INCLUDED</button>
       </div>
     </div>
@@ -52,7 +52,7 @@
   <div class="container buyer-extra-details">
     <div class="extra-left">
       <h3 class="card-title">Buyer’s offer</h3>
-      <div class="price">£179,000</div>
+      <div class="price">£{{ 179000 | number:'.0-0' }}</div>
       <label>Subject to offer qualification by Purplebricks</label>
       <div>
         <button class="btn">View Comments</button>
@@ -83,7 +83,6 @@
           type="number"
           id="new-price"
           [(ngModel)]="newOfferValue"
-          (ngModelChange)="validateNumber()"
         ><span class="hint" [class.red]="newOfferValue <= 0 || newOfferValue == null || newOfferValue == undefined" *ngIf="validatorState">Your offer is {{ (newOfferValue > 0 && newOfferValue != null && newOfferValue != undefined) ? 'Valid' : 'Invalid' }}</span>
       </div>
       <button class="btn btn-large blue" (click)="newOffer(); validatorState = true;">SUBMIT OFFER</button>
