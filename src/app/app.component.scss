@@ -2,17 +2,52 @@
 @import './../styles/mixins';
 
 header {
-  height: 100px;
+  height: 60px;
   background-color: lighten($gray, 70%);
   color: $purple;
   box-shadow: 0 1px 10px 0px $gray;
 
+  .container {
+    width: 100%;
+  }
+
+  @include respond('sm') {
+    height: 100px;
+  }
+
+  label {
+    font-size: 12px;
+  }
+
   h1 {
     margin: 0;
+    font-weight: 100;
+    font-size: 18px;
+
+    @include respond('sm') {
+      font-size: 36px;
+    }
+
+    sup {
+      font-size: 14px;
+
+      @include respond('sm') {
+        top: -18px;
+      }
+    }
   }
 
   a {
     color: $purple;
+  }
+
+  h2 {
+    @include font-w('Source Sans Pro', 900);
+    font-size: 16px;
+
+    @include respond('sm') {
+      font-size: 28px;
+    }
   }
 }
 

@@ -70,19 +70,35 @@ input {
   padding: 0 10px;
   border-radius: 5px;
   background-color: lighten($gray, 40%);
-  font-size: 17px;
-  line-height: 28px;
+  font-size: 14px;
+  line-height: 20px;
+
+  @include respond('sm') {
+    font-size: 17px;
+    line-height: 28px;
+  }
 }
 
 .btn-small {
-  font-size: 15px;
-  line-height: 25px;
+  font-size: 12px;
+  line-height: 20px;
+
+  @include respond('sm') {
+    font-size: 15px;
+    line-height: 25px;
+  }
 }
 
 .btn-large {
-  padding: 0 15px;
-  font-size: 22px;
-  line-height: 36px;
+  padding: 0 10px;
+  font-size: 18px;
+  line-height: 28px;
+
+  @include respond('sm') {
+    padding: 0 15px;
+    font-size: 22px;
+    line-height: 36px;
+  }
 }
 // Bootstrap changes ***
 
@@ -133,5 +149,34 @@ label {
 
 .text-right {
   text-align: right;
+}
+
+.flex {
+  display: flex;
+}
+
+.center-all {
+  justify-content: center;
+  align-items: center;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.jc-between {
+  justify-content: space-between;
+}
+
+.ai-center {
+  align-content: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.column {
+  flex-direction: column;
 }
 // Default styles ***

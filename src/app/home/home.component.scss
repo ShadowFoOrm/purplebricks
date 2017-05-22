@@ -26,6 +26,18 @@ section {
   @include card(lighten($gray, 60%));
 }
 
+.property {
+  .text-right {
+    width: 100%;
+    text-align: center;
+
+    @include respond('sm') {
+      width: auto;
+      text-align: right;
+    }
+  }
+}
+
 .buyer-details {
   button {
     padding: 0;
@@ -88,7 +100,20 @@ section {
 .property {
   h1 {
     @include font-w('Source Sans Pro', 900);
-    font-size: 20px;
+      font-size: 16px;
+      flex-basis: calc(100% - 136px);
+
+    @include respond('sm') {
+      font-size: 20px;
+      flex-basis: auto;
+    }
+  }
+
+  > div {
+    @include respond('sm') {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   .img-wrapper {
@@ -98,14 +123,26 @@ section {
     background-image: url('/assets/images/house.jpg');
   }
 
-  .text-right > div:first-of-type {
-    font-size: 15px;
-    color: $gray;
+  .porperty-price  {
+    text-align: center;
+
+    @include respond('sm') {
+      text-align: right;
+    }
+
+    > div:first-of-type {
+      font-size: 15px;
+      color: $gray;
+    }
   }
 
   .price {
     @include font-w('Source Sans Pro', 900);
-    font-size: 28px;
+    font-size: 20px;
+
+    @include respond('sm') {
+      font-size: 28px;
+    }
   }
 }
 
@@ -142,13 +179,24 @@ section {
 .extra-right {
   div:last-of-type {
     margin-top: 10px;
+
+    @include respond('md') {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0;
+    }
   }
 }
 
 .extra-left {
   .price {
-    font-size: 28px;
+    font-size: 20px;
     font-weight: bold;
+
+    @include respond('sm') {
+      font-size: 28px;
+    }
   }
 
   label {
@@ -162,14 +210,23 @@ section {
   color: $red;
 
   > div:first-of-type {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: bold;
+
+    @include respond('sm') {
+      font-size: 22px;
+    }
   }
 }
 
 .negotiation {
   > button {
-    margin-top: 16px;
+    display: block;
+    margin: 10px auto 0;
+
+    @include respond('sm') {
+      margin: 16px 0 0;
+    }
   }
 
   .card-title {
@@ -178,10 +235,19 @@ section {
 
   label {
     @include font-w('Source Sans Pro', 900);
-    font-size: 22px;
-    padding-left: 30px;
+    display: block;
+    width: 100%;
     margin-top: 20px;
-    line-height: 40px;
+    font-size: 22px;
+    text-align: center;
+    line-height: 24px;
+
+    @include respond('sm') {
+      padding-left: 30px;
+      width: auto;
+      line-height: 40px;
+      text-align: left;
+    }
   }
 
   .symbol {
@@ -201,19 +267,59 @@ section {
     font-weight: bold;
     color: $gray;
   }
+
+  > div:last-of-type {
+    text-align: center;
+
+    @include respond('sm') {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    > div {
+      display: inline-flex;
+    }
+
+    button {
+      display: block;
+      margin: 10px auto;
+
+      @include respond('sm') {
+        margin: 0;
+      }
+    }
+  }
 }
 
 .auto-negotiation {
   padding: 20px 30px;
   font-size: 17px;
   font-weight: bold;
+  text-align: center;
+
+  @include respond('sm') {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
 
   button {
-    margin-left: 80px;
+    display: block;
+    margin: 10px auto;
+
+    @include respond('sm') {
+      margin-left: 80px;
+    }
   }
 }
 
 h3 {
   @include font-w('Source Sans Pro', 900);
-  font-size: 28px;
+  font-size: 20px;
+
+  @include respond('sm') {
+    font-size: 28px;
+  }
 }
