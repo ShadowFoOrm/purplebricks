@@ -1,0 +1,89 @@
+@import './../../styles/vars';
+@import './../../styles/mixins';
+
+section {
+  margin-bottom: 30px;
+
+  &:first-of-type {
+    margin-bottom: 10px;
+    margin-top: 40px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 40px;
+  }
+}
+
+.property,
+.negotiation {
+  @include card($purple);
+  color: $purple;
+}
+
+.buyer-details,
+.extra-left,
+.auto-negotiation {
+  @include card(lighten($gray, 60%));
+}
+
+.extra-right {
+  @include card($red);
+  margin-top: 30px;
+
+  @include respond('sm') {
+    margin-top: 0;
+  }
+}
+
+.buyer-extra-details {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.extra-left,
+.extra-right {
+  flex-basis: 100%;
+
+  @include respond('sm') {
+    flex-basis: calc(50% - 15px);
+  }
+}
+
+.status {
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: $red;
+  color: $white;
+  line-height: 40px;
+}
+
+.card-title {
+  margin-bottom: 25px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid lighten($gray, 50%);
+}
+
+.buyer-details {
+  font-size: 17px;
+  color: $purple;
+
+  td {
+    margin: 5px 0;
+  }
+
+  td:last-child {
+    padding-left: 10px;
+    color: $gray;
+  }
+}
+
+.negotiation {
+  .card-title {
+    margin-bottom: 30px;
+  }
+}
+
+.auto-negotiation {
+  padding: 20px 30px;
+}
