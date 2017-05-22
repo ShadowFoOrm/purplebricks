@@ -20,16 +20,11 @@ import {
     ])
   ]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   validatorState: boolean = false;
   buyerState: string = 'closed';
   newComments: boolean = false;
   newOfferValue: number;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   toggle(): void {
     if (this.buyerState === 'closed') {
@@ -40,8 +35,17 @@ export class HomeComponent implements OnInit {
   }
 
   newOffer(): void {
-    const offer = this.newOfferValue.toFixed(0);
+    if (this.newOfferValue > 0 && this.newOfferValue != null && this.newOfferValue !== undefined) {
+      const offer = this.newOfferValue.toFixed(0);
+      console.log(offer);
 
-    console.log(offer);
+      // const myData = new Object();
+      // myData.offer = this.newOfferValue.toFixed(0);
+      // console.log(myData);
+    }
   }
 }
+
+// interface myData {
+//   offer: any;
+// }
