@@ -33,7 +33,11 @@ h6 {
 }
 
 button,
-input {
+input,
+.btn.active.focus,
+.btn.focus,
+.btn:active.focus,
+.btn:focus {
   &:focus {
     outline: none;
   }
@@ -59,10 +63,18 @@ input {
 
   &.purple {
     background-color: lighten($purple, 15%);
+
+    &:hover {
+      color: $blue;
+    }
   }
 
   &.blue {
     background-color: $blue;
+
+    &:hover {
+      color: lighten($purple, 20%);
+    }
   }
 }
 
@@ -72,6 +84,7 @@ input {
   background-color: lighten($gray, 40%);
   font-size: 14px;
   line-height: 20px;
+  transition: color .3s ease-in-out;
 
   @include respond('sm') {
     font-size: 17px;
@@ -169,7 +182,7 @@ label {
 }
 
 .ai-center {
-  align-content: center;
+  align-items: center;
 }
 
 .wrap {

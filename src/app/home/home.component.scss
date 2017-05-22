@@ -173,13 +173,49 @@ section {
     margin: 0;
   }
 
+  tr,
   td {
-    margin: 5px 0;
+    display: block;
+  }
+
+  tr {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include respond('sm') {
+      margin-bottom: 0;
+      display: table-row;
+    }
+  }
+
+  td {
+    vertical-align: top;
+    line-height: 18px;
+
+    @include respond('sm') {
+      display: table-cell;
+      margin: 5px 0;
+      line-height: 24px;
+    }
+  }
+
+  td:first-child {
+    font-weight: bold;
+
+    @include respond('sm') {
+      font-weight: normal;
+    }
   }
 
   td:last-child {
-    padding-left: 10px;
     color: $gray;
+
+    @include respond('sm') {
+      padding-left: 10px;
+    }
   }
 }
 
@@ -249,61 +285,73 @@ section {
     margin-bottom: 30px;
   }
 
-  label {
+  > label {
     @include font-w('Source Sans Pro', 900);
     display: block;
     width: 100%;
     margin-top: 20px;
-    font-size: 22px;
     text-align: center;
     line-height: 24px;
+    font-size: 16px;
 
     @include respond('sm') {
+      font-size: 22px;
       padding-left: 30px;
       width: auto;
       line-height: 40px;
       text-align: left;
     }
+
+    + div {
+      text-align: center;
+
+      @include respond('sm') {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      > div {
+        display: inline-flex;
+      }
+
+      button {
+        display: block;
+        margin: 10px auto;
+
+        @include respond('sm') {
+          margin: 0;
+        }
+      }
+    }
   }
 
   .symbol {
     display: inline-block;
-    line-height: 40px;
-    font-size: 40px;
+    line-height: 30px;
+    font-size: 30px;
     color: lighten($gray, 35%);
     font-weight: bold;
+
+    @include respond('sm') {
+      line-height: 40px;
+      font-size: 40px;
+    }
   }
 
   input {
-    height: 40px;
-    width: 240px;
+    height: 30px;
+    width: 180px;
     margin: 0 0 0 9px;
     padding: 0 10px;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
     color: $gray;
-  }
-
-  > div:last-of-type {
-    text-align: center;
 
     @include respond('sm') {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    > div {
-      display: inline-flex;
-    }
-
-    button {
-      display: block;
-      margin: 10px auto;
-
-      @include respond('sm') {
-        margin: 0;
-      }
+      height: 40px;
+      width: 240px;
+      font-size: 28px;
     }
   }
 }
@@ -337,5 +385,32 @@ h3 {
 
   @include respond('sm') {
     font-size: 28px;
+  }
+}
+
+textarea {
+  width: 100%;
+}
+
+.comments {
+  label {
+    font-size: 16px;
+    margin-top: 15px;
+
+    @include respond('sm') {
+      font-size: 20px;
+    }
+  }
+}
+
+.hint {
+  margin-left: 20px;
+  font-weight: bold;
+  color: $blue;
+  height: auto;
+  line-height: default;
+
+  &.red {
+    color: $red;
   }
 }

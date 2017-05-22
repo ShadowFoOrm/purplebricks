@@ -21,7 +21,11 @@ import {
   ]
 })
 export class HomeComponent implements OnInit {
+  validatorState: boolean = false;
   buyerState: string = 'closed';
+  newComments: boolean = false;
+  newOfferValue: number;
+
   constructor() { }
 
   ngOnInit() {
@@ -33,5 +37,16 @@ export class HomeComponent implements OnInit {
     } else {
       this.buyerState = 'closed';
     }
+  }
+
+  newOffer(): void {
+    var offersDetails = new Object();
+    offersDetails = this.newOfferValue;
+
+    console.log(offersDetails);
+  }
+
+  validateNumber(): void {
+    this.newOfferValue;
   }
 }

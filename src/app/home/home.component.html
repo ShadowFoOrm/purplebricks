@@ -23,7 +23,7 @@
   <div class="container buyer-details">
     <div class="card-title" fxLayout fxLayoutAlign="space-between">
       <h3>Buyer’s details</h3>
-      <button fxLayout fxLayoutAlign="space-between center" (click)="toggle()"><span>{{ buyerState == 'opened' ? 'Hide' : 'Show' }}</span> <span [class.opened]="buyerState == 'opened'">&#8249;</span></button>
+      <button fxLayout fxLayoutAlign="space-between center" (click)="toggle()"><span>{{ buyerState == 'opened' ? 'Hide' : 'Show' }}</span> <span [class.opened]="buyerState == 'closed'">&#8249;</span></button>
     </div>
     <div class="details-content" [@buyerDetails]="buyerState">
      <table>
@@ -78,9 +78,22 @@
     </div>
     <label for="new-price">Enter an offer you would be willing to accept:</label>
     <div>
-      <div class="flex ai-center"><span class="symbol">&#163;</span><input type="number" id="new-price"></div>
-      <button class="btn btn-large blue">SUBMIT OFFER</button>
+      <div class="flex ai-center"><span class="symbol">&#163;</span>
+        <input
+          type="number"
+          id="new-price"
+          [(ngModel)]="newOfferValue"
+          (ngModelChange)="validateNumber()"
+        ><span class="hint" [class.red]="newOfferValue <= 0 || newOfferValue == null || newOfferValue == undefined" *ngIf="validatorState">Your offer is {{ (newOfferValue > 0 && newOfferValue != null && newOfferValue != undefined) ? 'Valid' : 'Invalid' }}</span>
+      </div>
+      <button class="btn btn-large blue" (click)="newOffer(); validatorState = true;">SUBMIT OFFER</button>
     </div>
-    <button class="btn purple">ADD COMMENTS</button>
+    <button class="btn purple" (click)="newComments = !newComments">{{ !newComments ? 'Add Comments' : 'Remove Comments' }}</button>
+    <ng-template [ngIf]="newComments">
+      <div class="comments">
+        <label for="comments">Add your comments here !</label>
+        <textarea rows="5" id="comments"></textarea>
+      </div>
+    </ng-template>
   </div>
 </section>
