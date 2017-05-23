@@ -95,7 +95,7 @@
     <ng-template [ngIf]="newComments">
       <div class="comments">
         <label for="comments">Add your comments here !</label>
-        <textarea rows="5" id="comments"></textarea>
+        <textarea [(ngModel)]="buyer.comment" rows="5" id="comments"></textarea>
       </div>
     </ng-template>
   </div>

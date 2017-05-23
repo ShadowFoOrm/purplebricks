@@ -39,9 +39,12 @@ export class HomeComponent {
   submit(): void {
     if (this.newOfferValue > 0 && this.newOfferValue != null && this.newOfferValue !== undefined) {
       const newOffer = parseInt(this.newOfferValue, 10);
-
       this.buyer.new_offer = newOffer;
-      console.log(this.buyer);
     }
+
+    if (this.newComments === false) {
+      this.buyer.comment = null;
+    }
+    console.log(this.buyer);
   }
 }
