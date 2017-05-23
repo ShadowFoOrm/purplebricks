@@ -6,6 +6,7 @@ import {
   animate,
   transition
 } from '@angular/animations';
+import { Buyer } from './../models/index';
 
 @Component({
   selector: 'app-home',
@@ -25,6 +26,7 @@ export class HomeComponent {
   buyerState: string = 'closed';
   newComments: boolean = false;
   newOfferValue: any;
+  buyer: Buyer = new Buyer;
 
   toggle(): void {
     if (this.buyerState === 'closed') {
@@ -34,18 +36,12 @@ export class HomeComponent {
     }
   }
 
-  newOffer(): void {
+  submit(): void {
     if (this.newOfferValue > 0 && this.newOfferValue != null && this.newOfferValue !== undefined) {
-      const offer = parseInt(this.newOfferValue, 10);
-      console.log(offer);
+      const newOffer = parseInt(this.newOfferValue, 10);
 
-      // const myData = new Object();
-      // myData.offer = this.newOfferValue.toFixed(0);
-      // console.log(myData);
+      this.buyer.new_offer = newOffer;
+      console.log(this.buyer);
     }
   }
 }
-
-// interface myData {
-//   offer: any;
-// }

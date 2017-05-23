@@ -85,7 +85,7 @@
           [(ngModel)]="newOfferValue"
         ><span class="hint" [class.red]="newOfferValue <= 0 || newOfferValue == null || newOfferValue == undefined" *ngIf="validatorState">Your offer is {{ (newOfferValue > 0 && newOfferValue != null && newOfferValue !== undefined) ? 'Valid' : 'Invalid' }}</span>
       </div>
-      <button class="btn btn-large blue" (click)="newOffer(); validatorState = true;">SUBMIT OFFER</button>
+      <button class="btn btn-large blue" (click)="submit(); validatorState = true;">SUBMIT OFFER</button>
     </div>
     <button class="btn purple" (click)="newComments = !newComments">{{ !newComments ? 'Add Comments' : 'Remove Comments' }}</button>
     <ng-template [ngIf]="newComments">
