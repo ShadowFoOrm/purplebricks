@@ -78,12 +78,16 @@
     </div>
     <label for="new-price">Enter an offer you would be willing to accept:</label>
     <div>
-      <div class="flex ai-center"><span class="symbol">&#163;</span>
-        <input
-          type="number"
-          id="new-price"
-          [(ngModel)]="newOfferValue"
-        ><span class="hint" [class.red]="newOfferValue <= 0 || newOfferValue == null || newOfferValue == undefined" *ngIf="validatorState">Your offer is {{ (newOfferValue > 0 && newOfferValue != null && newOfferValue !== undefined) ? 'Valid' : 'Invalid' }}</span>
+      <div class="flex ai-center jc-center wrap">
+        <div>
+          <span class="symbol">&#163;</span>
+          <input
+            type="number"
+            id="new-price"
+            [(ngModel)]="newOfferValue"
+          >
+        </div>
+        <span class="hint" [class.red]="newOfferValue <= 0 || newOfferValue == null || newOfferValue == undefined" *ngIf="validatorState">Your offer is {{ (newOfferValue > 0 && newOfferValue != null && newOfferValue !== undefined) ? 'Valid' : 'Invalid' }}</span>
       </div>
       <button class="btn btn-large blue" (click)="submit(); validatorState = true;">SUBMIT OFFER</button>
     </div>

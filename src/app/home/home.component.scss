@@ -404,11 +404,18 @@ textarea {
 }
 
 .hint {
-  margin-left: 20px;
+  width: 100%;
   font-weight: bold;
   color: $blue;
   height: auto;
   line-height: default;
+  margin-top: 10px;
+
+  @include respond('sm') {
+    margin-left: 20px;
+    margin-top: 0;
+    width: auto;
+  }
 
   &.red {
     color: $red;
