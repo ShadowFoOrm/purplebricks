@@ -65,28 +65,163 @@ footer {
 }
 
 .main-menu {
+  width: 100vw;
+  height: 100vh;
+  padding-left: 50px;
+  padding-top: 15px;
+  position: fixed;
+  left: -100%;
+  top: 0;
+  background-color: lighten($gray, 6.5%);
+  transition: left .3s ease-in-out;
+
+  @include respond('sm') {
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+    padding-left: 0;
+    position: static;
+    width: auto;
+    height: auto;
+  }
+
+  &.open {
+    left: 0;
+  }
+
   li {
     color: $white;
-  }
+    margin-bottom: 10px;
 
-  li::after {
-    content: '|';
-    margin-left: 18px;
-  }
+    @include respond('sm') {
+      margin-bottom: 0;
 
-  li:last-child::after {
-    display: none;
+      &::after {
+        content: '|';
+        margin-left: 18px;
+      }
+
+      &:last-child::after {
+        display: none;
+      }
+    }
   }
 
   a,
   button {
+    width: 100%;
     color: $white;
-    font-size: 12px;
+    font-size: 16px;
+    line-height: 20px;
     text-transform: uppercase;
+    text-align: left;
+
+    @include respond('sm') {
+      width: auto;
+      font-size: 12px;
+      line-height: 12px;
+    }
   }
 
   button {
     background-color: transparent;
     border: 0;
+    padding: 0;
+  }
+}
+
+.main-menu-burger {
+  transform: rotate(0deg);
+  transition: transform .5s ease-in-out;
+  width: 30px;
+  height: 20px;
+  background: transparent;
+  border: 0;
+  outline: none;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  z-index: 10000;
+
+  span {
+    transform: rotate(0deg);
+    transition: transform .25s ease-in-out,
+                background-color .15s ease-in-out .15s;
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 50%;
+    background: $gray;
+    opacity: 1;
+  }
+
+  span:nth-child(even) {
+    left: 50%;
+  }
+
+  span:nth-child(odd) {
+    left: 0;
+  }
+
+  span:nth-child(1),
+  span:nth-child(2) {
+    top: 0;
+  }
+
+  span:nth-child(3),
+  span:nth-child(4) {
+    top: 9px;
+  }
+
+  span:nth-child(5),
+  span:nth-child(6) {
+    top: 18px;
+  }
+
+  &.open {
+    span {
+      background-color: $white;
+    }
+
+    span:nth-child(1),
+    span:nth-child(6) {
+      transform: rotate(45deg);
+    }
+
+    span:nth-child(2),
+    span:nth-child(5) {
+      transform: rotate(-45deg);
+    }
+
+    span:nth-child(1) {
+      left: 3px;
+      top: 3px;
+    }
+
+    span:nth-child(2) {
+      left: calc(50% - 3px);
+      top: 3px;
+    }
+
+    span:nth-child(3) {
+      left: -50%;
+      opacity: 0;
+    }
+
+    span:nth-child(4) {
+      left: 100%;
+      opacity: 0;
+    }
+
+    span:nth-child(5) {
+      left: 3px;
+      top: 12px;
+    }
+
+    span:nth-child(6) {
+      left: calc(50% - 3px);
+      top: 12px;
+    }
   }
 }

@@ -192,4 +192,10 @@ label {
 .column {
   flex-direction: column;
 }
+
+.no-scroll {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
 // Default styles ***

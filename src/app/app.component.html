@@ -1,3 +1,17 @@
+<button
+  class="main-menu-burger visible-xs"
+  [class.open]="sideNav"
+  (click)="toggleSidenav()"
+  (window:resize)="closeMenuOnDesktop()"
+  >
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
 <header class="flex column center-all">
   <div class="container" fxLayout="row" fxLayoutAlign="space-between end">
     <a [routerLink]="['/']">
@@ -14,7 +28,7 @@
 
 <footer class="flex column center-all">
   <nav class="container" fxLayout fxLayoutAlign="space-between center">
-    <ul class="main-menu hidden-xs" fxLayout fxLayoutAlign="center">
+    <ul class="main-menu" [class.open]="sideNav">
       <li><a [routerLink]="['/contact']">Contact Us</a></li>
       <li><a [routerLink]="['/faq']">FAQ</a></li>
       <li><a [routerLink]="['/join']">Join the team</a></li>
