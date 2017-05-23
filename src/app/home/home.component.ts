@@ -24,7 +24,7 @@ export class HomeComponent {
   validatorState: boolean = false;
   buyerState: string = 'closed';
   newComments: boolean = false;
-  newOfferValue: number;
+  newOfferValue: any;
 
   toggle(): void {
     if (this.buyerState === 'closed') {
@@ -36,7 +36,7 @@ export class HomeComponent {
 
   newOffer(): void {
     if (this.newOfferValue > 0 && this.newOfferValue != null && this.newOfferValue !== undefined) {
-      const offer = this.newOfferValue.toFixed(0);
+      const offer = parseInt(this.newOfferValue, 10);
       console.log(offer);
 
       // const myData = new Object();
